@@ -5,15 +5,18 @@ class Team {
     private string $_teamName;
     private string $_creationDate;
     private Country $_country;
-    private array $_players;
+    private Player $_player;
+    private array $_recrutings;
 
     /* Méthode magique : Constructor */
-    public function __construct($teamName, $creationDate, $country, ){
+    public function __construct($teamName, $creationDate, $country, $player, $recrutings = []){
         $this->_teamName = $teamName;
         $this->_creationDate = $creationDate;
         $this->_country = $country;
-        $this->_players = [];
+        $this->_player = $player;
+        $this->_recrutings = $recrutings;
         $country->addTeam($this);
+        $player->addTeamToPlayer($this);
     }
 
     /* Getter et Setter */
@@ -31,6 +34,14 @@ class Team {
     }
     public function setCountry() {
         $this->_country = $country;
+    }
+
+    /* Recrutement */
+    public function getRecrutings() {
+        return $this->_recrutings;
+    }
+    public function setRecrutings() {
+        $this->_recrutings = $recrutings;
     }
 
     /* Méthodes */

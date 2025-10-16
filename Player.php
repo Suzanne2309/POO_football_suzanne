@@ -7,6 +7,7 @@ class Player {
     private string $_birthDate;
     private Country $_country;
     private array $_recrutings;
+    private array $_teams;
 
     /* Méthode magique : Constructor */
     public function __construct($firstName, $lastName, $birthDate, $country, $recrutings = []){
@@ -14,6 +15,7 @@ class Player {
         $this->_lastName = $lastName;
         $this->_birthDate = $birthDate;
         $this->_country = $country;
+        $this->_teams = [];
         $this->_recrutings = $recrutings;   
     }
 
@@ -59,6 +61,10 @@ class Player {
     }
 
     /* Méthodes */
+    public function addTeamToPlayer(Team $team){ 
+        $this->_teams[] = $team;
+    }
+
     public function addRecruting(Recruting $recruting) {
         $this->_recrutings[] = $recruting;
     }
