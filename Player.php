@@ -7,16 +7,16 @@ class Player {
     private string $_birthDate;
     private Country $_country;
     private array $_recrutings;
-    private array $_teams;
+
+
 
     /* Méthode magique : Constructor */
-    public function __construct($firstName, $lastName, $birthDate, $country, $recrutings = []){
+    public function __construct($firstName, $lastName, $birthDate, $country){
         $this->_firstName = $firstName;
         $this->_lastName = $lastName;
         $this->_birthDate = $birthDate;
         $this->_country = $country;
-        $this->_teams = [];
-        $this->_recrutings = $recrutings;   
+        $this->_recrutings = [];
     }
 
     /* Getter et Setter */
@@ -25,7 +25,7 @@ class Player {
         return $this->_firstName;
     }
     public function setFirstName() {
-        $this->_name = $firstName;
+        $this->_firstName = $firstName;
     }
 
     /* Nom du joueur */
@@ -52,6 +52,14 @@ class Player {
         $this->_country = $country;
     }
 
+    /* Equipe */
+    public function getTeam() {
+        return $this->_team;
+    }
+    public function setTeam() {
+        $this->_team = $team;
+    }
+
     /* Recrutement */
     public function getRecrutings() {
         return $this->_recrutings;
@@ -61,21 +69,15 @@ class Player {
     }
 
     /* Méthodes */
-    public function addTeamToPlayer(Team $team){ 
-        $this->_teams[] = $team;
-    }
-
     public function addRecruting(Recruting $recruting) {
         $this->_recrutings[] = $recruting;
     }
 
     public function teamRecrutings() {
-        $afficher = "";
         foreach($this->_recrutings as $recruting) {
 
-                $afficher .= $recruting . ",<br>";
+                $recrutings[] = $recruting;
         };
-        return "" . $afficher . "";
     }
 
     public function calculAge(){

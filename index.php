@@ -21,15 +21,15 @@ $team4 = new Team('Juventus', '1897', $country4);
 $team5 = new Team('Manchester United', '1878', $country5);
 $team6 = new Team('Real Madrid', '1902', $country2);
 
-var_dump($country2);
-var_dump($country3);
+//var_dump($country2);
+//var_dump($country3);
 
-$player1 = new Player('Killian', 'Mbappe', '1998-12-20', $country1 ,[]);
-$player2 = new Player('Christiano', 'Ronaldo', '1985-02-05', $country6 ,[]);
-$player3 = new Player('Lionel', 'Messi', '1987-06-24', $country7 ,[]);
-$player4 = new Player('Neymar', 'Junior', '1992-02-05',$country8 ,[]);
+$player1 = new Player('Killian', 'Mbappe', '1998-12-20', $country1);
+$player2 = new Player('Christiano', 'Ronaldo', '1985-02-05', $country6);
+$player3 = new Player('Lionel', 'Messi', '1987-06-24', $country7);
+$player4 = new Player('Neymar', 'Junior', '1992-02-05',$country8);
 
-var_dump($player2);
+//var_dump($player2);
 
 $recruting1 = new Recruting('2017', '2024', $team1, $player1);
 $recruting2 = new Recruting('2024', '2025', $team6, $player1);
@@ -41,5 +41,73 @@ $recruting7 = new Recruting('2021', '2025', $team1, $player3);
 $recruting8 = new Recruting('2013', '2017', $team3, $player4);
 $recruting9 = new Recruting('2017', '2025', $team1, $player4);
 
-var_dump($recruting5);
-var_dump($team3);
+//var_dump($recruting5);
+//var_dump($team3);
+
+//echo $team2->playersRecruting();
+?>
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercice POO</title>
+    <link rel="stylesheet" href="uikit/css/uikit.min.css" />
+    <script src="uikit/js/uikit.min.js"></script>
+    <script src="uikit/js/uikit-icons.min.js"></script>
+</head>
+<body>
+
+    <header>
+        <h1>Exercice POO - Football</h1>
+    </header>
+
+    <main>
+        <div class="country">
+            <h2>Liste des pays</h2>
+            <div class="uk-card uk-card-overlay">
+                <h3><?php echo $country1->getcountryName(); ?></h3>
+                <p class="teams"><?php echo $country1->showTeams(); ?></p>
+            </div>
+            <div class="uk-card uk-card-overlay">
+                <h3><?php echo $country2->getcountryName(); ?></h3>
+                <p class="teams"><?php echo $country2->showTeams(); ?></p>
+            </div>
+            <div class="uk-card uk-card-overlay">
+                <h3><?php echo $country3->getcountryName(); ?></h3>
+                <p class="teams"><?php echo $country3->showTeams(); ?></p>
+            </div>
+            <div class="uk-card uk-card-overlay">
+                <h3><?php echo $country4->getcountryName(); ?></h3>
+                <p class="teams"><?php echo $country4->showTeams(); ?></p>
+            </div>
+        </div>
+
+        <div class="team">
+            <h2>Liste des équipes</h2>
+            <div class="uk-card uk-card-overlay">
+                <h3><?php echo $team1->getTeamName(); ?></h3>
+                <p class="teamInfo"><?php echo "" . $team1->getCountry() . " - " . $team1->getCreationDate() . "<br>"; ?></p>
+                <p class="players"><?php echo $team1->playersRecruting(); ?></p>
+            </div>
+            <div class="uk-card uk-card-overlay">
+                <h3><?php echo $team2->getTeamName(); ?></h3>
+                <p class="teamInfo"><?php echo "" . $team2->getCountry() . " - " . $team2->getCreationDate() . "<br>"; ?></p>
+            </div>
+            <div class="uk-card uk-card-overlay">
+                <h3><?php echo $team3->getTeamName(); ?></h3>
+                <p class="teamInfo"><?php echo "" . $team2->getCountry() . " - " . $team2->getCreationDate() . "<br>"; ?></p>
+            </div>
+            <div class="uk-card uk-card-overlay">
+                <h3><?php echo $team4->getTeamName(); ?></h3>
+                <p class="teamInfo"><?php echo "" . $team2->getCountry() . " - " . $team2->getCreationDate() . "<br>"; ?></p>
+            </div>
+        </div>
+
+
+
+    </main>
+
+</body>
+</html>

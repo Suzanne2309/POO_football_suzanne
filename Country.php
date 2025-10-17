@@ -35,6 +35,6 @@ class Country {
 
     /* Méthode magique : toString */
     public function __toString(){
-        return "Le pays " . $this->_countryName . " possède les équipes :" . showTeams() . "<br>";
+        return "" . $this->_countryName . "";
     }
 }
