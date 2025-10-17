@@ -73,11 +73,14 @@ class Player {
         $this->_recrutings[] = $recruting;
     }
 
-    public function teamRecrutings() {
+    public function teamsRecruting() {
+        $resultat = "";
         foreach($this->_recrutings as $recruting) {
 
-                $recrutings[] = $recruting;
-        };
+            $resultat .= $recruting->getTeam() . "<br>";
+
+        }
+             return "" . $resultat . "<br>";
     }
 
     public function calculAge(){
@@ -92,6 +95,6 @@ class Player {
 
     /* Méthode magique : toString */
     public function __toString(){
-        return "Le joueur " . $this->_firstName . " " . $this->_lastName . ", " . $this->calculAge() . "ans, est recruté par les équipes : <br>" . $this->teamRecrutings() . "";
+        return "" . $this->_firstName . " " . $this->_lastName . ", " . $this->calculAge() . "ans";
     }
 }

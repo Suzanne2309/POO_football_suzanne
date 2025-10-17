@@ -50,10 +50,10 @@ class Team {
         $resultat = "";
         foreach($this->_recrutings as $recruting) {
 
-            $resultat .= $recruting->getPlayer() . "";
+            $resultat .= $recruting->getPlayer() . "<br>";
 
         }
-             return "" . $resultat . ",<br>";
+             return "" . $resultat . "<br>";
     }
 
     /* Méthode magique : toString */

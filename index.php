@@ -53,6 +53,7 @@ $recruting9 = new Recruting('2017', '2025', $team1, $player4);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exercice POO</title>
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="uikit/css/uikit.min.css" />
     <script src="uikit/js/uikit.min.js"></script>
     <script src="uikit/js/uikit-icons.min.js"></script>
@@ -64,48 +65,83 @@ $recruting9 = new Recruting('2017', '2025', $team1, $player4);
     </header>
 
     <main>
-        <div class="country">
-            <h2>Liste des pays</h2>
+        <h2>Liste des pays</h2>
+        <div class="container">
             <div class="uk-card uk-card-overlay">
                 <h3><?php echo $country1->getcountryName(); ?></h3>
-                <p class="teams"><?php echo $country1->showTeams(); ?></p>
+                <p class="team"><?php echo $country1->showTeams(); ?></p>
             </div>
             <div class="uk-card uk-card-overlay">
                 <h3><?php echo $country2->getcountryName(); ?></h3>
-                <p class="teams"><?php echo $country2->showTeams(); ?></p>
+                <p class="team"><?php echo $country2->showTeams(); ?></p>
             </div>
             <div class="uk-card uk-card-overlay">
                 <h3><?php echo $country3->getcountryName(); ?></h3>
-                <p class="teams"><?php echo $country3->showTeams(); ?></p>
+                <p class="team"><?php echo $country3->showTeams(); ?></p>
             </div>
             <div class="uk-card uk-card-overlay">
                 <h3><?php echo $country4->getcountryName(); ?></h3>
-                <p class="teams"><?php echo $country4->showTeams(); ?></p>
+                <p class="team"><?php echo $country4->showTeams(); ?></p>
             </div>
         </div>
-
-        <div class="team">
-            <h2>Liste des équipes</h2>
+        
+        <h2>Liste des équipes</h2>
+        <div class="container">
             <div class="uk-card uk-card-overlay">
                 <h3><?php echo $team1->getTeamName(); ?></h3>
-                <p class="teamInfo"><?php echo "" . $team1->getCountry() . " - " . $team1->getCreationDate() . "<br>"; ?></p>
+                <p class="info"><?php echo "" . $team1->getCountry() . " - " . $team1->getCreationDate() . "<br>"; ?></p>
                 <p class="players"><?php echo $team1->playersRecruting(); ?></p>
             </div>
             <div class="uk-card uk-card-overlay">
                 <h3><?php echo $team2->getTeamName(); ?></h3>
-                <p class="teamInfo"><?php echo "" . $team2->getCountry() . " - " . $team2->getCreationDate() . "<br>"; ?></p>
+                <p class="info"><?php echo "" . $team2->getCountry() . " - " . $team2->getCreationDate() . "<br>"; ?></p>
+                <p class="players"><?php echo $team2->playersRecruting(); ?></p>
             </div>
             <div class="uk-card uk-card-overlay">
                 <h3><?php echo $team3->getTeamName(); ?></h3>
-                <p class="teamInfo"><?php echo "" . $team2->getCountry() . " - " . $team2->getCreationDate() . "<br>"; ?></p>
+                <p class="info"><?php echo "" . $team3->getCountry() . " - " . $team3->getCreationDate() . "<br>"; ?></p>
+                <p class="players"><?php echo $team3->playersRecruting(); ?></p>
             </div>
             <div class="uk-card uk-card-overlay">
                 <h3><?php echo $team4->getTeamName(); ?></h3>
-                <p class="teamInfo"><?php echo "" . $team2->getCountry() . " - " . $team2->getCreationDate() . "<br>"; ?></p>
+                <p class="info"><?php echo "" . $team4->getCountry() . " - " . $team4->getCreationDate() . "<br>"; ?></p>
+                <p class="players"><?php echo $team4->playersRecruting(); ?></p>
+            </div>
+            <div class="uk-card uk-card-overlay">
+                <h3><?php echo $team5->getTeamName(); ?></h3>
+                <p class="info"><?php echo "" . $team5->getCountry() . " - " . $team5->getCreationDate() . "<br>"; ?></p>
+                <p class="players"><?php echo $team5->playersRecruting(); ?></p>
+            </div>
+            <div class="uk-card uk-card-overlay">
+                <h3><?php echo $team6->getTeamName(); ?></h3>
+                <p class="info"><?php echo "" . $team6->getCountry() . " - " . $team6->getCreationDate() . "<br>"; ?></p>
+                <p class="players"><?php echo $team6->playersRecruting(); ?></p>
             </div>
         </div>
 
-
+        <h2>Liste des joueurs</h2>
+        <div class="container">
+            <div class="uk-card uk-card-overlay">
+                <h3><?php echo "" . $player1->getFirstName() . " " . $player1->getLastName() . "<br>"; ?></h3>
+                <p class="info"><?php echo "" . $player1->getCountry() . " - " . $player1->calculAge() . "ans<br>"; ?></p>
+                <p class="teams"><?php echo $player1->teamsRecruting(); ?></p>
+            </div>
+            <div class="uk-card uk-card-overlay">
+                <h3><?php echo "" . $player2->getFirstName() . " " . $player2->getLastName() . "<br>"; ?></h3>
+                <p class="info"><?php echo "" . $player2->getCountry() . " - " . $player2->calculAge() . "ans<br>"; ?></p>
+                <p class="teams"><?php echo $player2->teamsRecruting(); ?></p>
+            </div>
+            <div class="uk-card uk-card-overlay">
+                <h3><?php echo "" . $player3->getFirstName() . " " . $player3->getLastName() . "<br>"; ?></h3>
+                <p class="info"><?php echo "" . $player3->getCountry() . " - " . $player3->calculAge() . "ans<br>"; ?></p>
+                <p class="teams"><?php echo $player3->teamsRecruting(); ?></p>
+            </div>
+            <div class="uk-card uk-card-overlay">
+                <h3><?php echo "" . $player4->getFirstName() . " " . $player4->getLastName() . "<br>"; ?></h3>
+                <p class="info"><?php echo "" . $player4->getCountry() . " - " . $player4->calculAge() . "ans<br>"; ?></p>
+                <p class="teams"><?php echo $player4->teamsRecruting(); ?></p>
+            </div>
+        </div>
 
     </main>
 

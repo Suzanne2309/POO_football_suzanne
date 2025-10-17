@@ -1,0 +1,65 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    padding: 1em;
+}
+
+header {
+    padding: 2em;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 3em;
+    font-weight: 700;
+}
+
+main {
+    width: 100%;
+    background-color: #ffb899;
+    padding: 1em;
+    border: 1em solid #ffb899;
+    border-radius: 3%;
+}
+
+main h2 {
+    padding: 1em;
+    font-size: 2em;
+    font-weight: 600;
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+}
+
+.uk-card {
+    width: 300px;
+    height: 300px;
+    padding: 0.7em;
+    border: 0.3em solid #ffb899;
+    border-radius: 15%;
+}
+
+.uk-card h3 {
+    font-weight: 500;
+    text-align: center;
+}
+
+.info {
+    color: #030303;
+    font-size: 1.2em;
+}
+
+.team {
+    color: #030303;
+    font-size: 1.2em;
+}
